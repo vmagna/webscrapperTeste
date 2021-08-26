@@ -3,18 +3,19 @@ package com.testeviasoft.webscrapperdemo.repository;
 import com.testeviasoft.webscrapperdemo.dto.PaginacaoDTO;
 import com.testeviasoft.webscrapperdemo.dto.SearchDTO;
 import com.testeviasoft.webscrapperdemo.orm.HistoricoApiNfe;
-import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 @Repository
-public class HistoricoApiNfeCustomRepository {
+public class HistoricoApiNfeRepositoryCustomImpl {
 
     private final EntityManager em;
 
-    public HistoricoApiNfeCustomRepository(EntityManager em) {
+    public HistoricoApiNfeRepositoryCustomImpl(EntityManager em) {
         this.em = em;
     }
 
@@ -73,7 +74,7 @@ public class HistoricoApiNfeCustomRepository {
     List<HistoricoApiNfe> buscarPorIdAutorizador(int idAutorizador)
     {
         String query = "select H from HistoricoApiNfe as H " +
-                "where H.autorizador = :autorizador LIMIT 288";
+                "where H.autorizador = :autorizador";
 
         var hist = em.createQuery(query, HistoricoApiNfe.class)
                 .setParameter("autorizador", idAutorizador);

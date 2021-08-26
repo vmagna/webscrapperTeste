@@ -40,7 +40,9 @@ public class ScrampperService {
 
         int cont = 0;
         for (Element headline : tableDados) {
-            // System.out.println(String.format("%s => %s", cont, headline.select("td:eq(0)")));
+
+            System.out.println(String.format("%s => %s", cont, headline.select("td:eq(0)")));
+
             String tdValor = headline.select("td:eq(0)").text().replace(" ", "").replace("-", "");
 
             if ( cont > 0 ){
@@ -55,7 +57,8 @@ public class ScrampperService {
                                 TipoSituacaoEnum.getTipoSituacaoEnum(String.format("%s",headline.select("td:eq(6)"))),
                                 TipoSituacaoEnum.getTipoSituacaoEnum(String.format("%s",headline.select("td:eq(7)"))),
                                 TipoSituacaoEnum.getTipoSituacaoEnum(String.format("%s",headline.select("td:eq(8)"))),
-                                LocalDateTime.now()));
+                                LocalDateTime.now()
+                        ));
             }
             cont++;
 
