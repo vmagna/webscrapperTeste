@@ -43,10 +43,16 @@ public class HistoricoApiNfeEndpoint {
     @PostMapping("/search")
     @ResponseBody
     @ResponseStatus( code = HttpStatus.OK )
-    public PaginacaoDTO search(SearchDTO searchDTO) {
+    public PaginacaoDTO search(@RequestBody SearchDTO searchDTO) {
         return this.historicoApiNfeController.search(searchDTO);
     }
 
+    @PostMapping("/maior-indisponibilidade")
+    @ResponseBody
+    @ResponseStatus( code = HttpStatus.OK )
+    public String maiorIndisponibilidade(@RequestBody SearchDTO searchDTO) {
+        return this.historicoApiNfeController.maiorIndisponibilidade(searchDTO);
+    }
 
 
 //    @PutMapping("/{id}")

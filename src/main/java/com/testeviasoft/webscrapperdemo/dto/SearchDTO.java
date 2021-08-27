@@ -10,27 +10,28 @@ public class SearchDTO {
 
     Integer autorizador;
 
+    Integer campoOrder;
+
+    Integer typeOrder;
+
     public LocalDateTime getDtInicio() {
         return dtInicio;
-    }
-
-    public void setDtInicio(LocalDateTime dtInicio) {
-        this.dtInicio = dtInicio;
     }
 
     public LocalDateTime getDtFim() {
         return dtFim;
     }
 
-    public void setDtFim(LocalDateTime dtFim) {
-        this.dtFim = dtFim;
-    }
-
     public Integer getAutorizador() {
         return autorizador;
     }
 
-    public void setAutorizador(Integer autorizador) {
-        this.autorizador = autorizador;
+    public Integer getCampoOrder() {
+        return campoOrder;
     }
+
+    public Integer getTypeOrder() {
+        return typeOrder;
+    }
+
 }

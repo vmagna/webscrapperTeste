@@ -1,7 +1,5 @@
 package com.testeviasoft.webscrapperdemo.repository;
 
-import com.testeviasoft.webscrapperdemo.dto.PaginacaoDTO;
-import com.testeviasoft.webscrapperdemo.dto.SearchDTO;
 import com.testeviasoft.webscrapperdemo.orm.HistoricoApiNfe;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface HistoricoApiNfeRepository extends JpaRepository<HistoricoApiNfe, Long>, HistoricoApiNfeRepositoryCustom {
+public interface HistoricoApiNfeRepository extends JpaRepository<HistoricoApiNfe, Long> {
 
     List<HistoricoApiNfe> findTop288ByAutorizadorOrderByIdAsc(int autorizador);
     HistoricoApiNfe findByAutorizador(int autorizador);

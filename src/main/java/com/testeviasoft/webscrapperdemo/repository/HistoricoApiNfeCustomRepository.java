@@ -4,9 +4,7 @@ import com.testeviasoft.webscrapperdemo.dto.PaginacaoDTO;
 import com.testeviasoft.webscrapperdemo.dto.SearchDTO;
 import com.testeviasoft.webscrapperdemo.orm.HistoricoApiNfe;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -18,67 +16,63 @@ public class HistoricoApiNfeCustomRepository {
         this.em = em;
     }
 
-    public void addPersonByName(String name) {
-        Query q = em.createQuery("SELECT H FROM HistoricoApiNfe AS H FROM H.autorizador = !1");
-        List<HistoricoApiNfe> list = q.getResultList();
-
-        for(HistoricoApiNfe h: list) {
-            System.out.println(" AUT -> "+ h.getAutorizador() );
-        }
-    }
-
     public PaginacaoDTO search(SearchDTO searchDTO) {
-
         String query = "select H from HistoricoApiNfe as H ";
         String condicao = "where";
 
         if(searchDTO.getAutorizador() != null) {
-            query += condicao + " H.autorizador = :autorizador";
+            query = query.concat(condicao + " H.autorizador = ?").replace("?", searchDTO.getAutorizador().toString());
             condicao = " and ";
         }
-        if(searchDTO.getDtInicio() != null) {
-            query += condicao + " H.horaAtualizacao > :dtInicio";
+        if(searchDTO.getDtInicio() != null && searchDTO.getDtFim() != null) {
+            query = query.concat(condicao +
+                    "H.horaAtualizacao BETWEEN '?1' AND '?2' ")
+                    .replace("?1", searchDTO.getDtInicio().toString())
+                    .replace("?2", searchDTO.getDtFim().toString());
             condicao = " and ";
         }
-        if(searchDTO.getDtFim() != null) {
-            query += condicao + " H.horaAtualizacao < :dtFim";
-        }
+
+        System.out.println(String.format("%s", query));
 
         var hist = em.createQuery(query, HistoricoApiNfe.class);
 
-        if (searchDTO.getAutorizador() != null) {
-            hist.setParameter("autorizador", searchDTO.getAutorizador());
-        }
-        if (searchDTO.getDtInicio() != null) {
-            hist.setParameter("dtInicio", searchDTO.getDtInicio());
-        }
-        if (searchDTO.getDtFim() != null) {
-            hist.setParameter("dtFim", searchDTO.getDtInicio());
-        }
-
         return new PaginacaoDTO(
-                1,
-                0,
-                0,
-                0,
-                0,
-                0,
+                0, 0, 0,
+                0, //ct.getMaxResults(),
+                0, 0,
                 hist.getResultList()
         );
+    }
 
+    public List<HistoricoApiNfe> maiorIndisponibilidade(SearchDTO searchDTO) {
+        String query = "select H from HistoricoApiNfe as H ";
+        String condicao = "where";
+
+        if(searchDTO.getDtInicio() != null && searchDTO.getDtFim() != null) {
+            query = query.concat(condicao +
+                    "H.horaAtualizacao BETWEEN '?1' AND '?2' ")
+                    .replace("?1", searchDTO.getDtInicio().toString())
+                    .replace("?2", searchDTO.getDtFim().toString());
+            condicao = " and ";
+        }
+
+        System.out.println(String.format("%s", query));
+
+        var hist = em.createQuery(query, HistoricoApiNfe.class);
+
+        return hist.getResultList();
     }
 
     // BUSCAR COM PARAMETRO AUTORIZADOR
     // LIMIT DE 24 HRS // 60/5=12*24=288 )
-    List<HistoricoApiNfe> buscarPorIdAutorizador(int idAutorizador)
-    {
-        String query = "select H from HistoricoApiNfe as H " +
-                "where H.autorizador = :autorizador LIMIT 288";
-
-        var hist = em.createQuery(query, HistoricoApiNfe.class)
-                .setParameter("autorizador", idAutorizador);
-
-        return hist.getResultList();
-    }
+//    List<HistoricoApiNfe> buscarPorIdAutorizador(int idAutorizador) {
+//        String query = "select H from HistoricoApiNfe as H " +
+//                "where H.autorizador = :autorizador LIMIT 288";
+//
+//        var hist = em.createQuery(query, HistoricoApiNfe.class)
+//                .setParameter("autorizador", idAutorizador);
+//
+//        return hist.getResultList();
+//    }
 
 }
