@@ -1,16 +1,14 @@
-package com.testeviasoft.webscrapperdemo.controller;
+package com.webscrapperTeste.webscrapperdemo.controller;
 
-import com.testeviasoft.webscrapperdemo.dto.PaginacaoDTO;
-import com.testeviasoft.webscrapperdemo.dto.SearchDTO;
-import com.testeviasoft.webscrapperdemo.enumeration.TipoSituacaoEnum;
-import com.testeviasoft.webscrapperdemo.repository.HistoricoApiNfeCustomRepository;
-import com.testeviasoft.webscrapperdemo.repository.HistoricoApiNfeRepository;
-import com.testeviasoft.webscrapperdemo.orm.HistoricoApiNfe;
+import com.webscrapperTeste.webscrapperdemo.dto.PaginacaoDTO;
+import com.webscrapperTeste.webscrapperdemo.dto.SearchDTO;
+import com.webscrapperTeste.webscrapperdemo.enumeration.TipoSituacaoEnum;
+import com.webscrapperTeste.webscrapperdemo.repository.HistoricoApiNfeCustomRepository;
+import com.webscrapperTeste.webscrapperdemo.repository.HistoricoApiNfeRepository;
+import com.webscrapperTeste.webscrapperdemo.orm.HistoricoApiNfe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 

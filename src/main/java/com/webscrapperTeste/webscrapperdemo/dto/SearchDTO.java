@@ -1,4 +1,4 @@
-package com.testeviasoft.webscrapperdemo.dto;
+package com.webscrapperTeste.webscrapperdemo.dto;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package com.testeviasoft.webscrapperdemo.enumeration;
+package com.webscrapperTeste.webscrapperdemo.enumeration;
 
 public enum TipoSituacaoEnum {
     VAZIO,

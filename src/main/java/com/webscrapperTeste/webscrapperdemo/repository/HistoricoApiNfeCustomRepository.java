@@ -1,8 +1,8 @@
-package com.testeviasoft.webscrapperdemo.repository;
+package com.webscrapperTeste.webscrapperdemo.repository;
 
-import com.testeviasoft.webscrapperdemo.dto.PaginacaoDTO;
-import com.testeviasoft.webscrapperdemo.dto.SearchDTO;
-import com.testeviasoft.webscrapperdemo.orm.HistoricoApiNfe;
+import com.webscrapperTeste.webscrapperdemo.dto.PaginacaoDTO;
+import com.webscrapperTeste.webscrapperdemo.dto.SearchDTO;
+import com.webscrapperTeste.webscrapperdemo.orm.HistoricoApiNfe;
 import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import java.util.List;

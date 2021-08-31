@@ -1,4 +1,4 @@
-package com.testeviasoft.webscrapperdemo.converter;
+package com.webscrapperTeste.webscrapperdemo.converter;
 
 import org.springframework.beans.BeanUtils;
 

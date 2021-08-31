@@ -1,9 +1,9 @@
-package com.testeviasoft.webscrapperdemo.util;
+package com.webscrapperTeste.webscrapperdemo.util;
 
-import com.testeviasoft.webscrapperdemo.controller.HistoricoApiNfeController;
-import com.testeviasoft.webscrapperdemo.orm.HistoricoApiNfe;
-import com.testeviasoft.webscrapperdemo.enumeration.AutorizadorEnum;
-import com.testeviasoft.webscrapperdemo.enumeration.TipoSituacaoEnum;
+import com.webscrapperTeste.webscrapperdemo.controller.HistoricoApiNfeController;
+import com.webscrapperTeste.webscrapperdemo.orm.HistoricoApiNfe;
+import com.webscrapperTeste.webscrapperdemo.enumeration.AutorizadorEnum;
+import com.webscrapperTeste.webscrapperdemo.enumeration.TipoSituacaoEnum;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

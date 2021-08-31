@@ -1,6 +1,6 @@
-package com.testeviasoft.webscrapperdemo.repository;
+package com.webscrapperTeste.webscrapperdemo.repository;
 
-import com.testeviasoft.webscrapperdemo.orm.HistoricoApiNfe;
+import com.webscrapperTeste.webscrapperdemo.orm.HistoricoApiNfe;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

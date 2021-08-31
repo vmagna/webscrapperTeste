@@ -1,9 +1,9 @@
-package com.testeviasoft.webscrapperdemo.endpoint;
+package com.webscrapperTeste.webscrapperdemo.endpoint;
 
-import com.testeviasoft.webscrapperdemo.controller.HistoricoApiNfeController;
-import com.testeviasoft.webscrapperdemo.dto.PaginacaoDTO;
-import com.testeviasoft.webscrapperdemo.dto.SearchDTO;
-import com.testeviasoft.webscrapperdemo.orm.HistoricoApiNfe;
+import com.webscrapperTeste.webscrapperdemo.controller.HistoricoApiNfeController;
+import com.webscrapperTeste.webscrapperdemo.dto.PaginacaoDTO;
+import com.webscrapperTeste.webscrapperdemo.dto.SearchDTO;
+import com.webscrapperTeste.webscrapperdemo.orm.HistoricoApiNfe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.testeviasoft.webscrapperdemo.dto;
+package com.webscrapperTeste.webscrapperdemo.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

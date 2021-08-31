@@ -1,7 +1,8 @@
-package com.testeviasoft.webscrapperdemo.dto;
+package com.webscrapperTeste.webscrapperdemo.dto;
 
-import com.testeviasoft.webscrapperdemo.enumeration.AutorizadorEnum;
-import com.testeviasoft.webscrapperdemo.enumeration.TipoSituacaoEnum;
+import com.webscrapperTeste.webscrapperdemo.enumeration.AutorizadorEnum;
+import com.webscrapperTeste.webscrapperdemo.enumeration.TipoSituacaoEnum;
+
 import java.time.LocalDateTime;
 
 public class HistoricoApiNfeDTO {

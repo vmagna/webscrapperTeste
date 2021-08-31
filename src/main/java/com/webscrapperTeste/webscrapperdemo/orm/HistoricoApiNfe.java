@@ -1,7 +1,7 @@
-package com.testeviasoft.webscrapperdemo.orm;
+package com.webscrapperTeste.webscrapperdemo.orm;
 
-import com.testeviasoft.webscrapperdemo.enumeration.AutorizadorEnum;
-import com.testeviasoft.webscrapperdemo.enumeration.TipoSituacaoEnum;
+import com.webscrapperTeste.webscrapperdemo.enumeration.AutorizadorEnum;
+import com.webscrapperTeste.webscrapperdemo.enumeration.TipoSituacaoEnum;
 import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import java.time.LocalDateTime;

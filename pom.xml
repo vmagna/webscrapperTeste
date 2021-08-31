@@ -8,10 +8,10 @@
 		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.testeviasoft</groupId>
-	<artifactId>viasoftdemo</artifactId>
+	<groupId>com.webscrapperTeste</groupId>
+	<artifactId>webscrapperdemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>viasoftdemo</name>
+	<name>webscrapperteste</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>14</java.version>
