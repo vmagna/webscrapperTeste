@@ -40,6 +40,7 @@ public class HistoricoApiNfeEndpoint {
         return this.historicoApiNfeController.create(historicoApiNfe);
     }
 
+    @CrossOrigin()
     @PostMapping("/search")
     @ResponseBody
     @ResponseStatus( code = HttpStatus.OK )

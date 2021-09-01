@@ -10,10 +10,6 @@ public class SearchDTO {
 
     Integer autorizador;
 
-    Integer campoOrder;
-
-    Integer typeOrder;
-
     public LocalDateTime getDtInicio() {
         return dtInicio;
     }
@@ -24,14 +20,6 @@ public class SearchDTO {
 
     public Integer getAutorizador() {
         return autorizador;
-    }
-
-    public Integer getCampoOrder() {
-        return campoOrder;
-    }
-
-    public Integer getTypeOrder() {
-        return typeOrder;
     }
 
 }

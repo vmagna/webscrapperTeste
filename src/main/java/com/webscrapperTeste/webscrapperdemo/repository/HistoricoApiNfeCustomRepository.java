@@ -26,7 +26,7 @@ public class HistoricoApiNfeCustomRepository {
         }
         if(searchDTO.getDtInicio() != null && searchDTO.getDtFim() != null) {
             query = query.concat(condicao +
-                    "H.horaAtualizacao BETWEEN '?1' AND '?2' ")
+                    " H.horaAtualizacao BETWEEN '?1' AND '?2' ")
                     .replace("?1", searchDTO.getDtInicio().toString())
                     .replace("?2", searchDTO.getDtFim().toString());
             condicao = " and ";
@@ -50,7 +50,7 @@ public class HistoricoApiNfeCustomRepository {
 
         if(searchDTO.getDtInicio() != null && searchDTO.getDtFim() != null) {
             query = query.concat(condicao +
-                    "H.horaAtualizacao BETWEEN '?1' AND '?2' ")
+                    " H.horaAtualizacao BETWEEN '?1' AND '?2' ")
                     .replace("?1", searchDTO.getDtInicio().toString())
                     .replace("?2", searchDTO.getDtFim().toString());
             condicao = " and ";
