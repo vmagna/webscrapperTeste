@@ -2,6 +2,7 @@ package com.webscrapperTeste.webscrapperdemo.orm;
 
 import com.webscrapperTeste.webscrapperdemo.enumeration.AutorizadorEnum;
 import com.webscrapperTeste.webscrapperdemo.enumeration.TipoSituacaoEnum;
+import com.webscrapperTeste.webscrapperdemo.orm.converter.LocalDateTimePersistenceConverter;
 import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -16,6 +17,7 @@ public class HistoricoApiNfe {
 
     @CreatedDate
     @Column(name = "hora_atualicazao", updatable = false)
+    @Convert(converter = LocalDateTimePersistenceConverter.class)
     private LocalDateTime horaAtualizacao = LocalDateTime.now();
 
     @Column(name = "autorizador")
@@ -66,16 +68,16 @@ public class HistoricoApiNfe {
                            TipoSituacaoEnum consultaCadastro4,
                            TipoSituacaoEnum recepcaoEventos4,
                            LocalDateTime horaAtualizacao) {
-        this.autorizador = autorizador;
-        this.autorizacao4 = autorizacao4;
-        this.retornoAutorizacao4 = retornoAutorizacao4;
-        this.inutilizacao4 = inutilizacao4;
-        this.consultaProtocolo4 = consultaProtocolo4;
-        this.statusServico4 = statusServico4;
-        this.tempoMedio = tempoMedio;
-        this.consultaCadastro4 = consultaCadastro4;
-        this.recepcaoEventos4 = recepcaoEventos4;
-        this.horaAtualizacao = horaAtualizacao;
+        this.autorizador = autorizador;                 // ENTIDADE | ESTADO
+        this.autorizacao4 = autorizacao4;               // 1
+        this.retornoAutorizacao4 = retornoAutorizacao4; // 2
+        this.inutilizacao4 = inutilizacao4;             // 3
+        this.consultaProtocolo4 = consultaProtocolo4;   // 4
+        this.statusServico4 = statusServico4;           // 5
+        this.tempoMedio = tempoMedio;                   // 6
+        this.consultaCadastro4 = consultaCadastro4;     // 7
+        this.recepcaoEventos4 = recepcaoEventos4;       // 8
+        this.horaAtualizacao = horaAtualizacao;         // HORA ATUALIZACAO
     }
 
     public Long getId() {
