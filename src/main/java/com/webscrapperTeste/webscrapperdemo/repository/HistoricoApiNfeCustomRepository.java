@@ -32,6 +32,8 @@ public class HistoricoApiNfeCustomRepository {
             condicao = " and ";
         }
 
+//        query = query.concat("GROUP BY autorizador");
+
         System.out.println(String.format("%s", query));
 
         var hist = em.createQuery(query, HistoricoApiNfe.class);
