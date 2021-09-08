@@ -75,7 +75,7 @@ public class HistoricoApiNfeController {
         int[] vermelho6 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
         int qtdElem = result.size();
-        System.out.println(qtdElem);
+//        System.out.println(qtdElem);
         for (int i = 0; i < qtdElem; i++) {
             if (result.get(i).getAutorizacao4() == TipoSituacaoEnum.VERDE) {
                 int or = result.get(i).getAutorizador().ordinal();

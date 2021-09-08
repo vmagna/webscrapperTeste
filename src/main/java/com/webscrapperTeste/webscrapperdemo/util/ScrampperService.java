@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 public class ScrampperService {
     private final long SEGUNDO = 1000;
     private final long MINUTO = SEGUNDO * 60;
-    private final long HORA = MINUTO * 2;// TEMPO EM MILLISEGUNDOS
+    private final long HORA = MINUTO * 5;// TEMPO EM MILLISEGUNDOS
 
     private final HistoricoApiNfeController historicoApiNfeController;
 
@@ -41,7 +41,7 @@ public class ScrampperService {
         int cont = 0;
         for (Element headline : tableDados) {
 
-            System.out.println(String.format("%s => %s", cont, headline.select("td:eq(0)")));
+//            System.out.println(String.format("%s => %s", cont, headline.select("td:eq(0)")));
 
             String tdValor = headline.select("td:eq(0)").text().replace(" ", "").replace("-", "");
 

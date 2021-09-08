@@ -20,7 +20,7 @@ public class HistoricoApiNfeCustomRepository {
         String query = "select H from HistoricoApiNfe as H ";
         String condicao = "where";
 
-        if(searchDTO.getAutorizador() != null) {
+        if(searchDTO.getAutorizador() != null && searchDTO.getAutorizador() != 0) {
             query = query.concat(condicao + " H.autorizador = ?").replace("?", searchDTO.getAutorizador().toString());
             condicao = " and ";
         }
@@ -34,7 +34,7 @@ public class HistoricoApiNfeCustomRepository {
 
 //        query = query.concat("GROUP BY autorizador");
 
-        System.out.println(String.format("%s", query));
+//        System.out.println(String.format("%s", query));
 
         var hist = em.createQuery(query, HistoricoApiNfe.class);
 
@@ -58,7 +58,7 @@ public class HistoricoApiNfeCustomRepository {
             condicao = " and ";
         }
 
-        System.out.println(String.format("%s", query));
+//        System.out.println(String.format("%s", query));
 
         var hist = em.createQuery(query, HistoricoApiNfe.class);
 
